@@ -149,7 +149,29 @@ const checkSmartContract = async (tonweb, address) => {
             }
         }
 
-                // Check for predefined KTON addresses
+        // Check for predefined Bemo v2 addresses
+        const bemoV2TreasuryMainnet = 'EQCSxGZPHqa3TtnODgMan8CEM0jf6HpY-uon_NMeFgjKqkEY';
+        const bemoV2TreasuryTestnet = 'kQA8BUb8WZ18ZKXikEnGzor2dcd_DW8n-kSbclqUAo0N7iS9';
+
+        if (addressFormatted === bemoV2TreasuryMainnet || addressFormatted === bemoV2TreasuryTestnet) {
+            return {
+                status: SUCCESS,
+                text: 'Bemo v2 Treasury'
+            }
+        }
+
+        // Check for predefined Bemo v1 addresses
+        const bemoV1TreasuryMainnet = 'EQDNhy-nxYFgUqzfUzImBEP67JqsyMIcyk2S5_RwNNEYku0k';
+        const bemoV1TreasuryTestnet = 'kQBmnSQ8Bd2ZfeTlgbkPhCPlol8BBeGFtS2tGVtvPwV3wBok';
+
+        if (addressFormatted === bemoV1TreasuryMainnet || addressFormatted === bemoV1TreasuryTestnet) {
+            return {
+                status: SUCCESS,
+                text: 'Bemo v1 Treasury'
+            }
+        }
+
+        // Check for predefined KTON addresses
         const ktonPoolMainnet = 'EQDsW2P6nuP1zopKoNiCYj2xhqDan0cBuULQ8MH4o7dBt_7a';
         const ktonPoolTestnet = 'kQD2y9eUotYw7VprrD0UJvAigDVXwgCCLWAl-DjaamCHniVr';
         const addressFormatted = address.toString(true, true, true);

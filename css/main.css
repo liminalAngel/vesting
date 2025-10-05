@@ -643,6 +643,10 @@ input::-webkit-date-and-time-value {
 #whitelist_useHipoJettonButton,
 #whitelist_useKTONPoolButton,
 #whitelist_useKTONJettonButton,
+#whitelist_useBemoV2TreasuryButton,
+#whitelist_useBemoV2JettonButton,
+#whitelist_useBemoV1TreasuryButton,
+#whitelist_useBemoV1JettonButton,
 #whitelist_useElectorButton {
     margin-top: 10px;
     width: 100%;
