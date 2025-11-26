@@ -120,6 +120,8 @@ const checkSmartContract = async (tonweb, address) => {
     try {
         /** @type {string} */
         const addressString = address.toString(false);
+        /** @type {string} */
+        const addressFormatted = address.toString(true, true, true);
 
         if (addressString === '-1:3333333333333333333333333333333333333333333333333333333333333333') {
             return {
@@ -174,7 +176,6 @@ const checkSmartContract = async (tonweb, address) => {
         // Check for predefined KTON addresses
         const ktonPoolMainnet = 'EQDsW2P6nuP1zopKoNiCYj2xhqDan0cBuULQ8MH4o7dBt_7a';
         const ktonPoolTestnet = 'kQD2y9eUotYw7VprrD0UJvAigDVXwgCCLWAl-DjaamCHniVr';
-        const addressFormatted = address.toString(true, true, true);
         
         if (addressFormatted === ktonPoolMainnet || addressFormatted === ktonPoolTestnet) {
             return {
@@ -191,7 +192,7 @@ const checkSmartContract = async (tonweb, address) => {
             return {
                 status: SUCCESS,
                 text: 'Hipo Treasury'
-        }
+            }
         } else if (await codeEquals(info.code, NOMINATOR_POOL_CODE_HASH)) {
 
             return checkPool(tonweb, addressString);
